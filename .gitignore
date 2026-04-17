@@ -1,0 +1,4 @@
+*__pycache__/
+*venv/
+*.sqlite3
+pillow-12.1.0-cp311-cp311-win_amd64.whl
