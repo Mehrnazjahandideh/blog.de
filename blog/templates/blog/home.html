@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}Home page{% endblock title %}
+{% block context %}
+<div class="main-wrapper">
+<section class="blog-list px-3 py-5 p-md-5">
+	 <div class="container">
+		<div class="item mb-5">
+			<div class="media-body">
+				<form method=GET style='border:solid rgb(20, 77, 20) 2px;border-radius: 10px;width:300px;heigt:200px;padding:30px;margin-top:40px;display:flex'>
+					<b style="color:red;">{{form_search}}</b>
+				 <input type="submit" name='submit' value='search'>
+				</form>
+    
+</div><!--//media-body-->
+		 </div><!--//item-->
+    </div>
+</section>
+</div>
+
+{% for posts in posts %}
+<div class="main-wrapper">
+<section class="blog-list px-3 py-5 p-md-5">
+	 <div class="container">
+		<div class="item mb-5">
+			<div class="media-body">
+
+						    <h3 class="title mb-1"><a href="{% url 'detail' posts.id %}">{{posts.title}}</a></h3>
+						    <div class="meta mb-1">
+								<span class="date">Date:Published 3 months ago</span>
+								<span class="time">{{posts.about}}</span>
+								<span class="comment">Author:{{posts.author}}</span>
+							</div>
+						    <div class="intro">{{posts.text|truncatewords:50}}</div>
+						    <a class="more-link" href="{% url 'detail' posts.id %}">Read more &rarr;</a>
+			</div><!--//media-body-->
+		 </div><!--//item-->
+    </div>
+</section>
+</div>
+{% endfor %}
+
+
+
+{% endblock context %}
+    

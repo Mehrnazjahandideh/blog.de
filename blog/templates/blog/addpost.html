@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}add post{% endblock title %}
+{% block context %}
+<div class="main-wrapper">
+<h2 style='font-size:3rem'>Add your post</h2>
+<section class="blog-list px-3 py-5 p-md-5">
+	<div class="container">
+     <div class="item mb-5">
+		<div class="media-body"> 
+			<form method='POST'>
+            {% csrf_token %}
+			{{forms.as_p}}
+		<button type="submit" value="send" style='background-color:rgb(95, 203, 113);width:100px;height:50px;font-size:x-large;'>send</button>
+
+    </form>
+
+    </div>
+	</div>
+    </div>
+</section>
+</div>
+			    
+			   
+{% endblock context %}
+    

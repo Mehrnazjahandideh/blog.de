@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Home page{% endblock title %}
+{% block context %}
+
+<div class="main-wrapper">
+<section class="blog-list px-3 py-5 p-md-5">
+	 <div class="container">
+
+        <div class="item mb-5">
+			 <div class="media-body">
+				<h3 class="title mb-1" style='color:rgb(37, 210, 66);'>{{posts.title}}</h3>
+                    <hr>
+					<div class="intro">{{posts.text}}</div>
+					<br>
+					<div class="meta mb-1">
+						<b style='color:rgb(37, 98, 47);'>Date:</b><span class="date" style='color:rgb(206, 75, 75);'>Published 3 months ago</span>
+					    <b style='color:rgb(37, 98, 47);'>Author:</b><span class="comment" style='color:rgb(206, 75, 75);'>{{posts.author}}</span>
+						<b style='color:rgb(37, 98, 47);'>Topic:</b><span class="time" style='color:rgb(206, 75, 75);'>{{posts.about|lower}}</span>					
+             </div>
+			 <a class="more-link" href="{% url 'home' %}">GO BACK HOME &rarr;</a>
+			<hr>
+			<br>
+			<div style='text-align:end;'>
+				
+			<a href='{% url "edit" posts.id %}' style='background-color:rgb(39, 87, 47);font-size:xx-large;text-decoration:none;color:black;margin:0.5rem;padding:0.5rem'> Edit </a>
+			<a href='{% url "delete" posts.id %}' style='background-color:rgb(210, 43, 43);font-size:xx-large;padding:0.5rem;text-decoration:none;color:black'>Delete</a>
+				
+		</div>
+
+	    </div><!--//item-->
+    </div>
+</section>
+</div>
+			    
+			   
+{% endblock context %}
+    
